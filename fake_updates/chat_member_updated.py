@@ -1,0 +1,149 @@
+from aiogram.types import Update, ChatMemberUpdated, Chat, User, ChatMemberMember, ChatMemberAdministrator
+from datetime import datetime
+
+
+member_became_admin = Update(
+    update_id=1,
+    chat_member=ChatMemberUpdated(
+        date=datetime.utcnow(),
+        chat=Chat(
+            id=-123,
+            title="Some Chat",
+            username=None,
+            type="supergroup"
+        ),
+        from_user=User(
+            id=1,
+            is_bot=False,
+            first_name="Groosha"
+        ),
+        old_chat_member=ChatMemberMember(
+            status="member",
+            user=User(
+                id=1,
+                is_bot=False,
+                first_name="Groosha"
+            )
+        ),
+        new_chat_member=ChatMemberAdministrator(
+            user=User(
+                id=1,
+                is_bot=False,
+                first_name="Groosha"
+            ),
+            can_manage_chat=True,
+            can_promote_members=True,
+            can_restrict_members=True,
+            can_manage_video_chats=True,
+            can_invite_users=True,
+            can_be_edited=True,
+            can_change_info=True,
+            can_pin_messages=True,
+            can_delete_messages=True,
+            can_edit_messages=True,
+            can_post_messages=True,
+            is_anonymous=False
+        )
+    )
+)
+
+admin_became_member = Update(
+    update_id=1,
+    chat_member=ChatMemberUpdated(
+        date=datetime.utcnow(),
+        chat=Chat(
+            id=-123,
+            title="Some Chat",
+            username=None,
+            type="supergroup"
+        ),
+        from_user=User(
+            id=1,
+            is_bot=False,
+            first_name="Groosha"
+        ),
+        new_chat_member=ChatMemberMember(
+            status="member",
+            user=User(
+                id=1,
+                is_bot=False,
+                first_name="Groosha"
+            )
+        ),
+        old_chat_member=ChatMemberAdministrator(
+            user=User(
+                id=1,
+                is_bot=False,
+                first_name="Groosha"
+            ),
+            can_manage_chat=True,
+            can_promote_members=True,
+            can_restrict_members=True,
+            can_manage_video_chats=True,
+            can_invite_users=True,
+            can_be_edited=True,
+            can_change_info=True,
+            can_pin_messages=True,
+            can_delete_messages=True,
+            can_edit_messages=True,
+            can_post_messages=True,
+            is_anonymous=False
+        )
+    )
+)
+
+admin_changed_rights = Update(
+    update_id=1,
+    chat_member=ChatMemberUpdated(
+        date=datetime.utcnow(),
+        chat=Chat(
+            id=-123,
+            title="Some Chat",
+            username=None,
+            type="supergroup"
+        ),
+        from_user=User(
+            id=1,
+            is_bot=False,
+            first_name="Groosha"
+        ),
+        old_chat_member=ChatMemberAdministrator(
+            user=User(
+                id=1,
+                is_bot=False,
+                first_name="Groosha"
+            ),
+            can_manage_chat=True,
+            can_promote_members=True,
+            can_restrict_members=True,
+            can_manage_video_chats=True,
+            can_invite_users=True,
+            can_be_edited=True,
+            can_change_info=True,
+            can_pin_messages=False,
+            can_delete_messages=True,
+            can_edit_messages=True,
+            can_post_messages=True,
+            is_anonymous=False
+        ),
+        new_chat_member=ChatMemberAdministrator(
+            user=User(
+                id=1,
+                is_bot=False,
+                first_name="Groosha"
+            ),
+            can_manage_chat=True,
+            can_promote_members=True,
+            can_restrict_members=True,
+            can_manage_video_chats=True,
+            can_invite_users=True,
+            can_be_edited=True,
+            can_change_info=True,
+            can_pin_messages=True,
+            can_delete_messages=True,
+            can_edit_messages=True,
+            can_post_messages=True,
+            is_anonymous=False
+        )
+    )
+)
